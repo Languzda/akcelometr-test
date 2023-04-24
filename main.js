@@ -3,6 +3,9 @@ import "./style.css";
 const app = document.querySelector("#app");
 const btn = document.querySelector("#btn");
 
+const acc = document.querySelector("#acc");
+const ori = document.querySelector("#ori");
+
 if (window.DeviceMotionEvent && window.DeviceOrientationEvent) {
   window.addEventListener("devicemotion", function (event) {
     console.log(
@@ -14,7 +17,7 @@ if (window.DeviceMotionEvent && window.DeviceOrientationEvent) {
         event.acceleration.z +
         " m/s2"
     );
-    app.innerHTML = `<h1>Acceleration: ${event.acceleration.x}, ${event.acceleration.y}, ${event.acceleration.z} m/s2</h1>`;
+    acc.innerHTML = ` ${event.acceleration.x}, ${event.acceleration.y}, ${event.acceleration.z} m/s2`;
   });
 
   window.addEventListener("deviceorientation", function (event) {
@@ -27,7 +30,7 @@ if (window.DeviceMotionEvent && window.DeviceOrientationEvent) {
         event.gamma +
         " deg"
     );
-    app.innerHTML += `<h1>Orientation: ${event.alpha}, ${event.beta}, ${event.gamma} deg</h1>`;
+    ori.innerHTML += ` ${event.alpha}, ${event.beta}, ${event.gamma} deg`;
   });
 }
 
