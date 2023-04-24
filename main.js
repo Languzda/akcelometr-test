@@ -30,7 +30,7 @@ if (window.DeviceMotionEvent && window.DeviceOrientationEvent) {
         event.gamma +
         " deg"
     );
-    ori.innerHTML += ` ${event.alpha}, ${event.beta}, ${event.gamma} deg`;
+    ori.innerHTML = ` ${event.alpha}, ${event.beta}, ${event.gamma} deg`;
   });
 }
 
